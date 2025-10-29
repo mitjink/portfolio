@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Портфолио</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+
+        <!-- хэдер -->
+        <header class="bg-light text-dark py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Моё Портфолио</h1>
+                        <p class="mb-0 opacity-75">Контакты</p>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggle">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- навигация -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">
+                                <i class="bi bi-newspaper me-1"></i>Новости
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="practices.html">
+                                <i class="bi bi-code-slash me-1"></i>Практики
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="goods.html">
+                                <i class="bi bi-cart me-1"></i>Товары
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container my-4">
+            <section class="mb-5">
+                <div class="card shadow-sm w-auto d-inline-block">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            Контакты
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-muted mb-0">
+                            Свяжитесь со мной удобным способом
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <h4 class="card-title h6 mb-0">
+                                <i class="bi bi-envelope text-primary me-2"></i>Контактная информация
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <strong>Электронная почта:</strong><br>
+                                doskova.m.p@edu.mirea.ru
+                            </div>
+                            <div class="mb-3">
+                                <strong>Адрес:</strong><br>
+                                г. Москва, ул. Выдуманная, д. -1, офис NaN
+                            </div>
+                            <div class="mb-3">
+                                <strong>Часы работы:</strong><br>
+                                Пн-Пт: 9:00-19:00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <h4 class="card-title h6 mb-0">
+                                <i class="bi bi-chat-dots text-primary me-2"></i>Форма обратной связи
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn btn-primary w-100" onclick="openContactModal()">
+                                <i class="bi bi-pencil me-1"></i>Связаться с нами
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- футер -->
+        <footer class="bg-secondary text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Мой сайт. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- модальное окно -->
+        <dialog id="contactModal">
+            <div class="modal-header">
+                <h2>Форма обратной связи</h2>
+            </div>
+
+            <div class="modal-content">
+                <form id="feedbackForm" method="dialog">
+                    <div class="form-group">
+                        <label for="name">Имя <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Как к Вам можно обращаться">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Телефон <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Электронная почта <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Категория обращения <span class="required">*</span></label>
+                        <select id="category" name="category" required>
+                            <option value="">Выберите категорию</option>
+                            <option value="technical">Техническая поддержка</option>
+                            <option value="commercial">Коммерческое предложение</option>
+                            <option value="cooperation">Сотрудничество</option>
+                            <option value="complaint">Жалоба</option>
+                            <option value="suggestion">Предложение</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Текст обращения <span class="required">*</span></label>
+                        <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос"></textarea>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Отмена</button>
+                        <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/theme.js"></script>
+    <script>
+        
+        function openContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.showModal();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.close();
+        }
+
+        function submitForm() {
+            const form = document.getElementById('feedbackForm');
+            const formData = new FormData(form);
+
+            if (!form.checkValidity()){
+                form.reportValidity();
+                return;
+            }
+
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                message: formData.get('message')
+            }
+
+            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
+
+            closeModal();
+            form.reset();
+        }
+
+        // закрытие модального окна при клике вне него
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+
+        // предотвращение отправки формы по Enter (кроме textarea)
+        document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && event.target.type !== 'textarea'){
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
