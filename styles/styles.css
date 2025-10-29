@@ -254,6 +254,11 @@ dialog {
     .modal-actions .btn {
         width: 100%;
     }
+    
+    .profile-actions {
+        margin-top: 1rem;
+        text-align: center;
+    }
 }
 
 /* анимации */
@@ -288,4 +293,16 @@ dialog {
 /* футер */
 footer {
     margin-top: auto;
+}
+
+/* профиль действия */
+.profile-actions {
+    margin-top: 1.5rem;
+}
+
+/* фильтры проектов */
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
