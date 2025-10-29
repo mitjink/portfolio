@@ -6,7 +6,7 @@
     <title>Главная - Портфолио</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body class="bg-light">
     <div class="container-fluid p-0">
@@ -42,18 +42,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/news.html">
-                                <i class="bi bi-newspaper me-1"></i>Новости
+                            <a class="nav-link" href="pages/projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/practices.html">
-                                <i class="bi bi-code-slash me-1"></i>Практики
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/goods.html">
-                                <i class="bi bi-cart me-1"></i>Товары
+                            <a class="nav-link" href="pages/diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
                             </a>
                         </li>
                         <li class="nav-item">
@@ -67,6 +62,28 @@
         </nav>
 
         <main class="container my-4">
+            <!-- приветствие -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5 text-center">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h2 class="card-title h1 mb-3 text-dark">Привет! Я студентка группы ЭФБО-03-24</h2>
+                                <p class="card-text lead text-muted mb-4">
+                                    Увлекаюсь веб-разработкой и изучаю современные технологии
+                                </p>
+                                <a href="assets/resume.pdf" class="btn btn-primary btn-lg" download>
+                                    <i class="bi bi-download me-2"></i>Скачать резюме
+                                </a>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <img src="images/photo.png" alt="Фото профиля" class="img-fluid rounded-circle" style="width: 250px; height: 250px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- профиль -->
             <section class="mb-5">
                 <div class="card shadow-sm">
@@ -96,26 +113,6 @@
                 </div>
             </section>
 
-            <!-- обо мне -->
-            <section class="mb-5">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-light">
-                        <h3 class="card-title h5 mb-0">
-                            <i class="bi bi-person-circle text-primary"></i>
-                            Обо мне
-                        </h3>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Студентка РТУ МИРЭА. Изучаю HTML, CSS и JavaScript.
-                        </p>
-                        <p class="card-text">
-                            Пока учусь.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
             <!-- навыки -->
             <section class="mb-5">
                 <div class="card shadow-sm">
@@ -131,39 +128,39 @@
                                 <div class="mb-3">
                                     <div class="d-flex justify-content-between mb-1">
                                         <span>HTML/CSS</span>
-                                        <span class="text-primary">20%</span>
+                                        <span class="text-primary">90%</span>
                                     </div>
                                     <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar bg-primary" style="width: 20%"></div>
+                                        <div class="progress-bar bg-primary" style="width: 90%"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="d-flex justify-content-between mb-1">
                                         <span>JavaScript</span>
-                                        <span class="text-primary">25%</span>
+                                        <span class="text-primary">80%</span>
                                     </div>
                                     <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar bg-success" style="width: 25%"></div>
+                                        <div class="progress-bar bg-success" style="width: 80%"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <div class="d-flex justify-content-between mb-1">
-                                        <span>Python</span>
-                                        <span class="text-primary">45%</span>
+                                        <span>Bootstrap</span>
+                                        <span class="text-primary">85%</span>
                                     </div>
                                     <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar bg-info" style="width: 45%"></div>
+                                        <div class="progress-bar bg-info" style="width: 85%"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="d-flex justify-content-between mb-1">
-                                        <span>C#</span>
-                                        <span class="text-primary">25%</span>
+                                        <span>React</span>
+                                        <span class="text-primary">60%</span>
                                     </div>
                                     <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar bg-warning" style="width: 25%"></div>
+                                        <div class="progress-bar bg-warning" style="width: 60%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -178,14 +175,14 @@
                     <div class="card-header bg-light">
                         <h3 class="card-title h5 mb-0">
                             <i class="bi bi-folder-fill text-primary"></i>
-                            Мои проекты
+                            Лучшие проекты
                         </h3>
                     </div>
                     <div class="card-body">
                         <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <div class="card-body">
+                            <div class="col-md-4">
+                                <div class="card h-100 product-card">
+                                    <div class="card-body text-center">
                                         <h5 class="card-title">Личный сайт</h5>
                                         <p class="card-text small text-muted">
                                             Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
@@ -198,15 +195,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Приложение для изучения иностранных слов</h5>
+                            <div class="col-md-4">
+                                <div class="card h-100 product-card">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Todo-приложение</h5>
                                         <p class="card-text small text-muted">
-                                            Простое приложение, помогающее в освоении языка, реализованное в рамках учебной курсовой работы.
+                                            Приложение для управления задачами с использованием JavaScript.
                                         </p>
                                         <div class="mb-2">
-                                            <span class="badge bg-success">C++</span>
+                                            <span class="badge bg-success">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 product-card">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Интернет-магазин</h5>
+                                        <p class="card-text small text-muted">
+                                            Интернет-магазин с корзиной покупок на React.
+                                        </p>
+                                        <div class="mb-2">
+                                            <span class="badge bg-warning">React</span>
                                         </div>
                                     </div>
                                 </div>
@@ -233,6 +243,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script/theme.js"></script>
+    <script src="scripts/theme.js"></script>
 </body>
 </html>
