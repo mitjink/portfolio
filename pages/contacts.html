@@ -6,7 +6,7 @@
     <title>Контакты - Портфолио</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body class="bg-light">
     <div class="container-fluid p-0">
@@ -42,18 +42,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="news.html">
-                                <i class="bi bi-newspaper me-1"></i>Новости
+                            <a class="nav-link" href="projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="practices.html">
-                                <i class="bi bi-code-slash me-1"></i>Практики
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="goods.html">
-                                <i class="bi bi-cart me-1"></i>Товары
+                            <a class="nav-link" href="diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
                             </a>
                         </li>
                         <li class="nav-item">
@@ -67,58 +62,106 @@
         </nav>
 
         <main class="container my-4">
-            <section class="mb-5">
-                <div class="card shadow-sm w-auto d-inline-block">
+            <section class="mb-4">
+                <div class="card shadow-sm section-header-card">
                     <div class="card-header bg-light">
                         <h3 class="card-title h5 mb-0">
                             <i class="bi bi-telephone text-primary me-2"></i>
-                            Контакты
+                            Свяжитесь со мной
                         </h3>
                     </div>
                     <div class="card-body">
                         <p class="card-text text-muted mb-0">
-                            Свяжитесь со мной удобным способом
+                            Буду рада ответить на ваши вопросы и обсудить сотрудничество
                         </p>
                     </div>
                 </div>
             </section>
 
             <div class="row g-4">
-                <div class="col-md-6">
+                <!-- контактная информация -->
+                <div class="col-lg-6">
                     <div class="card shadow-sm">
                         <div class="card-header bg-light">
-                            <h4 class="card-title h6 mb-0">
-                                <i class="bi bi-envelope text-primary me-2"></i>Контактная информация
-                            </h4>
+                            <h4 class="card-title h6 mb-0">Контактная информация</h4>
                         </div>
                         <div class="card-body">
-                            <div class="mb-3">
-                                <strong>Электронная почта:</strong><br>
-                                doskova.m.p@edu.mirea.ru
+                            <div class="contact-item mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="contact-icon me-3">
+                                        <i class="bi bi-envelope-fill text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Email</h6>
+                                        <p class="text-muted mb-0">student@example.com</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <strong>Адрес:</strong><br>
-                                г. Москва, ул. Выдуманная, д. -1, офис NaN
+                            <div class="contact-item mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="contact-icon me-3">
+                                        <i class="bi bi-telephone-fill text-success"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Телефон</h6>
+                                        <p class="text-muted mb-0">+7 (999) 123-45-67</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <strong>Часы работы:</strong><br>
-                                Пн-Пт: 9:00-19:00
+                            <div class="contact-item mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="contact-icon me-3">
+                                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Местоположение</h6>
+                                        <p class="text-muted mb-0">Москва, Россия</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="d-flex align-items-center">
+                                    <div class="contact-icon me-3">
+                                        <i class="bi bi-clock-fill text-warning"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Часы работы</h6>
+                                        <p class="text-muted mb-0">Пн-Пт: 9:00 - 18:00</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <!-- форма обратной связи -->
+                <div class="col-lg-6">
                     <div class="card shadow-sm">
                         <div class="card-header bg-light">
-                            <h4 class="card-title h6 mb-0">
-                                <i class="bi bi-chat-dots text-primary me-2"></i>Форма обратной связи
-                            </h4>
+                            <h4 class="card-title h6 mb-0">Форма обратной связи</h4>
                         </div>
                         <div class="card-body">
-                            <button class="btn btn-primary w-100" onclick="openContactModal()">
-                                <i class="bi bi-pencil me-1"></i>Связаться с нами
-                            </button>
+                            <form id="contactForm">
+                                <div class="form-group mb-3">
+                                    <label for="name" class="form-label">Имя <span class="required">*</span></label>
+                                    <input type="text" id="name" class="form-control" required placeholder="Введите ваше имя">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="email" class="form-label">Email <span class="required">*</span></label>
+                                    <input type="email" id="email" class="form-control" required placeholder="Введите ваш email">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="subject" class="form-label">Тема <span class="required">*</span></label>
+                                    <input type="text" id="subject" class="form-control" required placeholder="Тема сообщения">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="message" class="form-label">Сообщение <span class="required">*</span></label>
+                                    <textarea id="message" class="form-control" rows="4" required placeholder="Введите ваше сообщение..."></textarea>
+                                </div>
+                                <button type="button" class="btn btn-primary w-100" onclick="submitContactForm()">
+                                    <i class="bi bi-send me-2"></i>Отправить сообщение
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -138,106 +181,30 @@
                 </div>
             </div>
         </footer>
-
-        <!-- модальное окно -->
-        <dialog id="contactModal">
-            <div class="modal-header">
-                <h2>Форма обратной связи</h2>
-            </div>
-
-            <div class="modal-content">
-                <form id="feedbackForm" method="dialog">
-                    <div class="form-group">
-                        <label for="name">Имя <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required placeholder="Как к Вам можно обращаться">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Телефон <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Электронная почта <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="example@mail.ru">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category">Категория обращения <span class="required">*</span></label>
-                        <select id="category" name="category" required>
-                            <option value="">Выберите категорию</option>
-                            <option value="technical">Техническая поддержка</option>
-                            <option value="commercial">Коммерческое предложение</option>
-                            <option value="cooperation">Сотрудничество</option>
-                            <option value="complaint">Жалоба</option>
-                            <option value="suggestion">Предложение</option>
-                            <option value="other">Другое</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Текст обращения <span class="required">*</span></label>
-                        <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос"></textarea>
-                    </div>
-
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Отмена</button>
-                        <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
-                    </div>
-                </form>
-            </div>
-        </dialog>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../script/theme.js"></script>
+    <script src="../scripts/theme.js"></script>
     <script>
-        
-        function openContactModal() {
-            const modal = document.getElementById('contactModal');
-            modal.showModal();
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('contactModal');
-            modal.close();
-        }
-
-        function submitForm() {
-            const form = document.getElementById('feedbackForm');
-            const formData = new FormData(form);
-
-            if (!form.checkValidity()){
+        function submitContactForm() {
+            const form = document.getElementById('contactForm');
+            
+            if (!form.checkValidity()) {
                 form.reportValidity();
                 return;
             }
 
-            const data = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                email: formData.get('email'),
-                category: formData.get('category'),
-                message: formData.get('message')
-            }
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
 
-            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-
-            closeModal();
+            console.log('Данные формы:', formData);
+            alert('Сообщение успешно отправлено! Я свяжусь с вами в ближайшее время.');
             form.reset();
         }
-
-        // закрытие модального окна при клике вне него
-        document.getElementById('contactModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeModal();
-            }
-        });
-
-        // предотвращение отправки формы по Enter (кроме textarea)
-        document.getElementById('feedbackForm').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter' && event.target.type !== 'textarea'){
-                event.preventDefault();
-            }
-        });
     </script>
 </body>
 </html>

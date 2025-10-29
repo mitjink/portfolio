@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты - Портфолио</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+
+        <!-- хэдер -->
+        <header class="bg-light text-dark py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Моё Портфолио</h1>
+                        <p class="mb-0 opacity-75">Проекты</p>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggle">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- навигация -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="projects.html">
+                                <i class="bi bi-folder me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="diary.html">
+                                <i class="bi bi-journal me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container my-4">
+            <section class="mb-4">
+                <div class="card shadow-sm section-header-card">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-folder text-primary me-2"></i>
+                            Мои проекты
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-muted mb-0">
+                            Полная коллекция моих учебных и личных работ
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- фильтры -->
+            <div class="d-flex gap-2 mb-4 flex-wrap">
+                <button class="btn btn-outline-primary active" data-filter="all">Все</button>
+                <button class="btn btn-outline-primary" data-filter="html">HTML</button>
+                <button class="btn btn-outline-primary" data-filter="js">JavaScript</button>
+                <button class="btn btn-outline-primary" data-filter="react">React</button>
+            </div>
+
+            <!-- проекты -->
+            <div class="row g-4" id="projectsGrid">
+                <div class="col-md-6 col-lg-4" data-category="html">
+                    <div class="card h-100 product-card" onclick="openProjectModal('project1')">
+                        <div class="card-body">
+                            <h5 class="card-title">Личный сайт</h5>
+                            <p class="card-text small text-muted">
+                                Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
+                            </p>
+                            <div class="mb-2">
+                                <span class="badge bg-primary">HTML</span>
+                                <span class="badge bg-primary">CSS</span>
+                                <span class="badge bg-primary">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-category="js">
+                    <div class="card h-100 product-card" onclick="openProjectModal('project2')">
+                        <div class="card-body">
+                            <h5 class="card-title">Todo-приложение</h5>
+                            <p class="card-text small text-muted">
+                                Приложение для управления задачами с использованием JavaScript.
+                            </p>
+                            <div class="mb-2">
+                                <span class="badge bg-success">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-category="react">
+                    <div class="card h-100 product-card" onclick="openProjectModal('project3')">
+                        <div class="card-body">
+                            <h5 class="card-title">Интернет-магазин</h5>
+                            <p class="card-text small text-muted">
+                                Интернет-магазин с корзиной покупок на React.
+                            </p>
+                            <div class="mb-2">
+                                <span class="badge bg-warning">React</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-category="html">
+                    <div class="card h-100 product-card" onclick="openProjectModal('project4')">
+                        <div class="card-body">
+                            <h5 class="card-title">Портфолио Bootstrap</h5>
+                            <p class="card-text small text-muted">
+                                Адаптивное портфолио с использованием Bootstrap 5.
+                            </p>
+                            <div class="mb-2">
+                                <span class="badge bg-primary">Bootstrap</span>
+                                <span class="badge bg-primary">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- футер -->
+        <footer class="bg-secondary text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Мой сайт. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- модальное окно проекта -->
+        <dialog id="projectModal">
+            <div class="modal-content-custom">
+                <div class="modal-header-custom">
+                    <h2 id="modalTitle">Проект</h2>
+                </div>
+                <div class="modal-body-custom">
+                    <div id="modalContent">
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeProjectModal()">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/theme.js"></script>
+    <script>
+        // фильтр проектов
+        document.querySelectorAll('[data-filter]').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                document.querySelectorAll('[data-filter]').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                document.querySelectorAll('#projectsGrid > div').forEach(project => {
+                    if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        const projects = {
+            project1: {
+                title: 'Личный сайт',
+                description: 'Полнофункциональный сайт-портфолио с адаптивным дизайном, созданный с использованием современных веб-технологий.',
+                technologies: ['HTML5', 'CSS3', 'Bootstrap 5', 'JavaScript'],
+                features: ['Адаптивный дизайн', 'Темная тема', 'Оптимизация для мобильных устройств'],
+                links: {
+                    demo: '#',
+                    github: '#'
+                }
+            },
+            project2: {
+                title: 'Todo-приложение',
+                description: 'Интерактивное приложение для управления задачами с возможностью добавления, редактирования и удаления задач.',
+                technologies: ['JavaScript', 'LocalStorage', 'CSS3'],
+                features: ['Локальное сохранение данных', 'Фильтрация задач', 'Адаптивный интерфейс'],
+                links: {
+                    demo: '#',
+                    github: '#'
+                }
+            },
+            project3: {
+                title: 'Интернет-магазин',
+                description: 'Полноценный интернет-магазин с корзиной покупок, реализованный на React с использованием современных практик разработки.',
+                technologies: ['React', 'Context API', 'React Router', 'CSS Modules'],
+                features: ['Корзина покупок', 'Фильтрация товаров', 'Адаптивный дизайн'],
+                links: {
+                    demo: '#',
+                    github: '#'
+                }
+            },
+            project4: {
+                title: 'Портфолио Bootstrap',
+                description: 'Современное портфолио с использованием Bootstrap 5 и кастомных стилей.',
+                technologies: ['Bootstrap 5', 'CSS3', 'JavaScript'],
+                features: ['Адаптивная сетка', 'Интерактивные элементы', 'Оптимизация производительности'],
+                links: {
+                    demo: '#',
+                    github: '#'
+                }
+            }
+        };
+
+        function openProjectModal(projectId) {
+            const project = projects[projectId];
+            const modal = document.getElementById('projectModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            title.textContent = project.title;
+            content.innerHTML = `
+                <div class="mb-3">
+                    <p class="text-muted">${project.description}</p>
+                </div>
+                
+                <div class="mb-3">
+                    <h6 class="fw-bold">Технологии:</h6>
+                    <div class="d-flex gap-2 flex-wrap">
+                        ${project.technologies.map(tech => `<span class="badge bg-primary">${tech}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <h6 class="fw-bold">Основные функции:</h6>
+                    <ul>
+                        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="mb-3">
+                    <h6 class="fw-bold">Ссылки:</h6>
+                    <div class="d-flex gap-2">
+                        <a href="${project.links.demo}" class="btn btn-outline-primary btn-sm">Демо</a>
+                        <a href="${project.links.github}" class="btn btn-outline-dark btn-sm">GitHub</a>
+                    </div>
+                </div>
+            `;
+            
+            modal.showModal();
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.close();
+        }
+
+        // закрытие модального окна при клике вне его
+        document.getElementById('projectModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
