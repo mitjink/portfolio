@@ -96,7 +96,7 @@
                 </div>
             </section>
             
-            <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#hiddenText">Развернуть</button>
+            <button id="toggleBtn" class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#hiddenText">Развернуть</button>
             <div class="collapse mt-2" id="hiddenText">
                 <div class="card card-body">
                     <main class="container my-4">
@@ -267,5 +267,18 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/theme.js"></script>
+    <script>
+        const textBlock = document.getElementById('hiddenText');
+        const toggleBtn = document.getElementById('toggleBtn');
+
+        textBlock.addEventListener('show.bs.collapse', function() {
+        toggleBtn.textContent = 'Свернуть текст';
+
+        });
+
+        textBlock.addEventListener('hide.bs.collapse', function() {
+        toggleBtn.textContent = 'Развернуть текст';
+        });
+    </script>
 </body>
 </html>
