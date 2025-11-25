@@ -306,3 +306,48 @@ footer {
     color: white;
     border-color: var(--primary-color);
 }
+
+/*skip-link*/
+.skip-link{
+    position: absolute;
+    left: 1rem;
+    top: -100%;
+    z-index: 10000;
+    padding: .5rem .75rem;
+    background: #111;
+    color: #fff;
+    border-radius: .5rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible { 
+    top: 1rem; 
+}
+
+:focus-visible{
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+
+a, button, input, textarea, select {
+    outline-offset: 2px;
+}
+
+@media (pointer: coarse){
+    a, button, .nav-link{
+        min-height: 44px;
+    }
+
+    .btn{
+        padding-top: max(.5rem, calc((4px - 1em)/2));
+        padding-bottom: max(.5rem, calc((44px - 1em)/2));
+    }
+}
+
+.navbar-dark{
+    position: sticky;
+    top: 0;
+    padding-top: calc(.75rem + env(safe-area-insert-top, 0px));
+}
