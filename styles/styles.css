@@ -423,20 +423,23 @@ main {
 /* skip-link стили */
 .skip-link{
     position: absolute;
-    left: 1rem;
+    left: 0.5rem;
     top: -100%;
     z-index: 10000;
-    padding: .5rem .75rem;
+    padding: .25rem .5rem;
     background: #fff;
     color: #000;
-    border-radius: .5rem;
+    border-radius: .25rem;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.8rem;
+    border: 2px solid #2563eb;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
 .skip-link:focus,
 .skip-link:focus-visible { 
-    top: 1rem; 
+    top: 0.5rem; 
 }
 
 /* видимый фокус только для клавиатуры */
