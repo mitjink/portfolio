@@ -745,31 +745,31 @@ main.container.my-4 {
 /* индикатор фокуса для навигации */
 .nav-link:focus {
     outline: none;
-    border: 3px solid #0066CC;
-    background: rgba(0, 102, 204, 0.15);
-    color: inherit; /* Сохраняем исходный цвет текста */
-    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 5px #0066CC;
+    border: 3px solid #0055AA;
+    background: rgba(0, 85, 170, 0.12);
+    color: inherit;
+    box-shadow: 0 0 0 2px #FFFFFF;
 }
 
 /* индикатор фокуса для кнопок */
 .btn:focus {
     outline: none;
-    border: 3px solid #0066CC;
-    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 5px #0066CC;
-    background: rgba(0, 102, 204, 0.1);
+    border: 3px solid #0055AA;
+    box-shadow: 0 0 0 2px #FFFFFF;
+    background: rgba(0, 85, 170, 0.08);
 }
 
 [data-theme="dark"] .nav-link:focus {
-    border: 3px solid #00CC66;
-    background: rgba(0, 204, 102, 0.2);
-    color: inherit; 
-    box-shadow: 0 0 0 2px #000000, 0 0 0 5px #00CC66;
+    border: 3px solid #00DD77;
+    background: rgba(0, 221, 119, 0.2);
+    color: inherit;
+    box-shadow: 0 0 0 2px #000000;
 }
 
 [data-theme="dark"] .btn:focus {
-    border: 3px solid #00CC66;
-    box-shadow: 0 0 0 2px #000000, 0 0 0 5px #00CC66;
-    background: rgba(0, 204, 102, 0.15);
+    border: 3px solid #00DD77;
+    box-shadow: 0 0 0 2px #000000;
+    background: rgba(0, 221, 119, 0.15);
 }
 
 .nav-link:focus,
