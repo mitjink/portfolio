@@ -702,7 +702,22 @@ main.container.my-4 {
     padding: 0.75rem 1.25rem !important;
 }
 
-/* скрытый текст для скринридеров */
+.card-body {
+    padding: 1.5rem !important;
+}
+
+.project-card .card-body {
+    padding: 1.5rem !important;
+}
+
+.card {
+    margin-bottom: 1rem !important;
+}
+
+.section {
+    margin-bottom: 1.5rem !important;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
