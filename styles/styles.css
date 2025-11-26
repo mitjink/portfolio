@@ -563,3 +563,11 @@ a, button, input, textarea, select {
         padding-right: 1.1rem !important;
     }
 }
+
+.hero-photo {
+    inline-size: clamp(150px, 22vw, 200px);
+    block-size: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
