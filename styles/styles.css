@@ -62,6 +62,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     transition: var(--transition);
+    padding-top: 0.5rem;
 }
 
 /* карточки проектов */
@@ -193,10 +194,6 @@ dialog {
     gap: 10px;
     justify-content: flex-end;
     margin-top: 20px;
-}
-
-.container-fluid {
-    margin-top: 0.5rem;
 }
 
 /* формы */
