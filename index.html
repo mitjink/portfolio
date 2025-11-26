@@ -70,17 +70,20 @@
                         <div class="card-body p-4">
                             <div class="row align-items-center">
                                 <div class="col-md-3 text-center mb-3 mb-md-0">
-                                    <picture>
-                                        <source type="image/avif" srcset="images/photo.avif">
-                                        <source type="image/webp" srcset="images/photo.webp">
-                                        <img src="images/photo.png" alt="Фото профиля"
-                                            width="150" height="150"
-                                            class="img-fluid rounded-circle hero-photo"
-                                            style="object-fit: cover;"
-                                            loading="eager"
-                                            fetchpriority="high"
-                                            sizes="150px">
-                                    </picture>
+                                    <figure class="hero-image">
+                                        <picture>
+                                            <source type="image/avif" srcset="images/photo-150.avif 150w, images/photo-200.avif 200w, images/photo-300.avif 300w" sizes="200px">
+                                            <source type="image/webp" srcset="images/photo-150.webp 150w, images/photo-200.webp 200w, images/photo-300.webp 300w" sizes="200px">
+                                            <img class="hero-photo"
+                                                src="images/photo-200.jpg"
+                                                srcset="images/photo-150.jpg 150w, images/photo-200.jpg 200w,
+                                            images/photo-300.jpg 300w"
+                                                sizes="200px"
+                                                width="200" height="200"
+                                                alt="Фото профиля"
+                                                fetchpriority="high">
+                                        </picture>
+                                    </figure>
                                 </div>
                                 <div class="col-md-9">
                                     <h2 class="card-title h4 text-dark">Доськова Мария Павловна</h2>
