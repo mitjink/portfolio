@@ -258,14 +258,49 @@ dialog {
     border-radius: 6px;
 }
 
-/* адаптивная Grid-сетка для проектов */
+.projects-area {
+}
+
+/* базовые стили сетки для всех браузеров */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin: 2rem 0;
 }
 
+/* контейнерные запросы */
+@supports (container-type: inline-size) {
+    .projects-area {
+        container-type: inline-size;
+        container-name: projects;
+    }
+    
+    /* контейнер шире 600px - 2 колонки */
+    @container projects (min-width: 600px) {
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    /* контейнер шире 900px - 3 колонки */
+    @container projects (min-width: 900px) {
+        .projects-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@supports not (container-type: inline-size) {
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+}
+
+/* стили карточек проектов */
 .project-card .card {
     border: 1px solid #e9ecef;
     border-radius: 12px;
@@ -464,6 +499,35 @@ a, button, input, textarea, select {
     outline-offset: 2px; 
 }
 
+/* Улучшения для CLS (Cumulative Layout Shift) */
+.hero-image {
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-photo {
+    inline-size: clamp(150px, 22vw, 200px);
+    block-size: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    width: 100%;
+    height: 100%;
+}
+
+/* резервирование места для предотвращения CLS */
+.card {
+    min-height: 200px;
+}
+
+.timeline-item {
+    min-height: 80px;
+}
+
 /* крупные цели для тач-устройств */
 @media (pointer: coarse){
     a, button, .nav-link { 
@@ -496,7 +560,7 @@ a, button, input, textarea, select {
         padding-right: 1rem !important;
     }
     
-    /* Гамбургер кнопка */
+    /* гамбургер кнопка */
     .navbar-toggler {
         border: none;
         padding: 0.5rem;
@@ -551,6 +615,11 @@ a, button, input, textarea, select {
     #projectsGrid .project-card .card .card-title {
         font-size: 1.2rem;
     }
+    
+    .hero-image {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -575,12 +644,73 @@ a, button, input, textarea, select {
         padding-left: 1.1rem !important;
         padding-right: 1.1rem !important;
     }
+    
+    .hero-image {
+        width: 100px;
+        height: 100px;
+    }
 }
 
-.hero-photo {
-    inline-size: clamp(150px, 22vw, 200px);
-    block-size: auto;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .card {
+        animation: none;
+    }
+    
+    .product-card:hover {
+        transform: none;
+    }
+    
+    .project-card .card:hover {
+        transform: none;
+    }
+}
+
+/* повышенный контраст */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0056b3;
+        --secondary-color: #495057;
+        --border-color: #000000;
+    }
+    
+    .card {
+        border: 2px solid var(--border-color);
+    }
+    
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* скрытый текст для скринридеров */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* индикатор фокуса для навигации */
+.nav-link:focus {
+    outline: none;
+    border-color: #0066cc;
+    background: #e6f3ff;
+}
+
+/* индикатор фокуса для кнопок */
+.btn:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3);
 }

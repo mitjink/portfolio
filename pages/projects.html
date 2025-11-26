@@ -109,37 +109,39 @@
                     <button class="btn btn-outline-primary filter-btn" data-filter="css">CSS</button>
                 </div>
 
-                <!-- проекты -->
-                <div class="projects-grid" id="projectsGrid">
-                    <div class="project-card" data-category="html,css,bootstrap">
-                        <div class="card h-100" onclick="openProjectModal('project1')">
-                            <div class="card-body">
-                                <h5 class="card-title">Личный сайт</h5>
-                                <p class="card-text">
-                                    Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
-                                </p>
-                                <div class="mt-auto">
-                                    <span class="badge bg-primary">HTML</span>
-                                    <span class="badge bg-primary">CSS</span>
-                                    <span class="badge bg-primary">Bootstrap</span>
+                <!-- проекты с контейнерной оберткой -->
+                <section class="projects-area">
+                    <div class="projects-grid" id="projectsGrid">
+                        <div class="project-card" data-category="html,css,bootstrap">
+                            <div class="card h-100" onclick="openProjectModal('project1')">
+                                <div class="card-body">
+                                    <h5 class="card-title">Личный сайт</h5>
+                                    <p class="card-text">
+                                        Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
+                                    </p>
+                                    <div class="mt-auto">
+                                        <span class="badge bg-primary">HTML</span>
+                                        <span class="badge bg-primary">CSS</span>
+                                        <span class="badge bg-primary">Bootstrap</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card" data-category="cpp">
+                            <div class="card h-100" onclick="openProjectModal('project2')">
+                                <div class="card-body">
+                                    <h5 class="card-title">Приложение для изучения иностранных слов</h5>
+                                    <p class="card-text">
+                                        Приложение, помогающее в изучении английского и немецкого языков, реализованное на языке C++.
+                                    </p>
+                                    <div class="mt-auto">
+                                        <span class="badge bg-success">C++</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card" data-category="cpp">
-                        <div class="card h-100" onclick="openProjectModal('project2')">
-                            <div class="card-body">
-                                <h5 class="card-title">Приложение для изучения иностранных слов</h5>
-                                <p class="card-text">
-                                    Приложение, помогающее в изучении английского и немецкого языков, реализованное на языке C++.
-                                </p>
-                                <div class="mt-auto">
-                                    <span class="badge bg-success">C++</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </main>
 
             <!-- футер -->
@@ -174,109 +176,109 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="../scripts/theme.js"></script>
-        <script>
-            // фильтр проектов
-            document.querySelectorAll('.filter-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const filter = this.getAttribute('data-filter');
-                    
-                    document.querySelectorAll('.filter-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                    
-                    document.querySelectorAll('#projectsGrid > div').forEach(project => {
-                        const categories = project.getAttribute('data-category').split(',');
-                        if (filter === 'all' || categories.includes(filter)) {
-                            project.style.display = 'block';
-                        } else {
-                            project.style.display = 'none';
-                        }
-                    });
+    <script src="../scripts/theme.js"></script>
+    <script>
+        // фильтр проектов
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                document.querySelectorAll('#projectsGrid > div').forEach(project => {
+                    const categories = project.getAttribute('data-category').split(',');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
                 });
             });
+        });
 
-            const projects = {
-                project1: {
-                    title: 'Личный сайт',
-                    description: 'Полнофункциональный сайт-портфолио с адаптивным дизайном, созданный с использованием современных веб-технологий.',
-                    technologies: ['HTML', 'CSS', 'JavaScript'],
-                    features: ['Адаптивный дизайн', 'Темная тема', 'Оптимизация для мобильных устройств'],
-                    links: {
-                        demo: '../index.html',
-                        github: 'https://mitjink.github.io/portfolio/'
-                    }
-                },
-
-                project2: {
-                    title: 'Приложение для изучения иностранных языков',
-                    description: 'Приложение для изучения иностранных языков.',
-                    technologies: ['Qt Creator', 'C++'],
-                    features: ['Выбор языка', 'Фидбек пользователю'],
-                    links: {
-                        github: ''
-                    }
+        const projects = {
+            project1: {
+                title: 'Личный сайт',
+                description: 'Полнофункциональный сайт-портфолио с адаптивным дизайном, созданный с использованием современных веб-технологий.',
+                technologies: ['HTML', 'CSS', 'JavaScript'],
+                features: ['Адаптивный дизайн', 'Темная тема', 'Оптимизация для мобильных устройств'],
+                links: {
+                    demo: '../index.html',
+                    github: 'https://mitjink.github.io/portfolio/'
                 }
-            };
+            },
 
-            function openProjectModal(projectId) {
-                const project = projects[projectId];
-                const modal = document.getElementById('projectModal');
-                const title = document.getElementById('modalTitle');
-                const content = document.getElementById('modalContent');
-                
-                title.textContent = project.title;
-                content.innerHTML = `
-                    <div class="mb-3">
-                        <p class="text-muted">${project.description}</p>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <h6 class="fw-bold">Технологии:</h6>
-                        <div class="d-flex gap-2 flex-wrap">
-                            ${project.technologies.map(tech => `<span class="badge bg-primary">${tech}</span>`).join('')}
-                        </div>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <h6 class="fw-bold">Основные функции:</h6>
-                        <ul>
-                            ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-                        </ul>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <h6 class="fw-bold">Ссылки:</h6>
-                        <div class="d-flex gap-2 flex-wrap">
-                            ${project.links.demo ? 
-                                `<a href="${project.links.demo}" class="btn btn-outline-primary btn-sm" target="_blank">
-                                    <i class="bi bi-eye me-1"></i>Демо
-                                </a>` : ''
-                            }
-                            ${project.links.github ? 
-                                `<a href="${project.links.github}" class="btn btn-outline-dark btn-sm" target="_blank">
-                                    <i class="bi bi-github me-1"></i>GitHub
-                                </a>` : ''
-                            }
-                        </div>
-                    </div>
-                `;
-                
-                modal.showModal();
-            }
-
-            function closeProjectModal() {
-                const modal = document.getElementById('projectModal');
-                modal.close();
-            }
-
-            // закрытие модального окна при клике вне его
-            document.getElementById('projectModal').addEventListener('click', function(event) {
-                if (event.target === this) {
-                    closeProjectModal();
+            project2: {
+                title: 'Приложение для изучения иностранных языков',
+                description: 'Приложение для изучения иностранных языков.',
+                technologies: ['Qt Creator', 'C++'],
+                features: ['Выбор языка', 'Фидбек пользователю'],
+                links: {
+                    github: ''
                 }
-            });
-        </script>
+            }
+        };
+
+        function openProjectModal(projectId) {
+            const project = projects[projectId];
+            const modal = document.getElementById('projectModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            title.textContent = project.title;
+            content.innerHTML = `
+                <div class="mb-3">
+                    <p class="text-muted">${project.description}</p>
+                </div>
+                
+                <div class="mb-3">
+                    <h6 class="fw-bold">Технологии:</h6>
+                    <div class="d-flex gap-2 flex-wrap">
+                        ${project.technologies.map(tech => `<span class="badge bg-primary">${tech}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <h6 class="fw-bold">Основные функции:</h6>
+                    <ul>
+                        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="mb-3">
+                    <h6 class="fw-bold">Ссылки:</h6>
+                    <div class="d-flex gap-2 flex-wrap">
+                        ${project.links.demo ? 
+                            `<a href="${project.links.demo}" class="btn btn-outline-primary btn-sm" target="_blank">
+                                <i class="bi bi-eye me-1"></i>Демо
+                            </a>` : ''
+                        }
+                        ${project.links.github ? 
+                            `<a href="${project.links.github}" class="btn btn-outline-dark btn-sm" target="_blank">
+                                <i class="bi bi-github me-1"></i>GitHub
+                            </a>` : ''
+                        }
+                    </div>
+                </div>
+            `;
+            
+            modal.showModal();
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.close();
+        }
+
+        // закрытие модального окна при клике вне его
+        document.getElementById('projectModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeProjectModal();
+            }
+        });
+    </script>
 </body>
 </html>
