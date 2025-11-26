@@ -195,6 +195,10 @@ dialog {
     margin-top: 20px;
 }
 
+.container-fluid {
+    margin-top: 0.5rem;
+}
+
 /* формы */
 .form-group {
     margin-bottom: 1rem;
