@@ -110,32 +110,28 @@
             </div>
 
             <!-- проекты -->
-            <div class="row g-4" id="projectsGrid">
-                <div class="col-md-6 col-lg-4" data-category="html,css,bootstrap">
-                    <div class="card h-100 product-card" onclick="openProjectModal('project1')">
-                        <div class="card-body">
-                            <h5 class="card-title">Личный сайт</h5>
-                            <p class="card-text small text-muted">
-                                Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
-                            </p>
-                            <div class="mb-2">
-                                <span class="badge bg-primary">HTML</span>
-                                <span class="badge bg-primary">CSS</span>
-                                <span class="badge bg-primary">Bootstrap</span>
-                            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card" data-category="html,css,bootstrap">
+                    <div class="card h-100" onclick="openProjectModal('project1')">
+                        <h5 class="card-title">Личный сайт</h5>
+                        <p class="card-text small text-muted">
+                            Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
+                        </p>
+                        <div class="mb-2">
+                            <span class="badge bg-primary">HTML</span>
+                            <span class="badge bg-primary">CSS</span>
+                            <span class="badge bg-primary">Bootstrap</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4" data-category="cpp">
-                    <div class="card h-100 product-card" onclick="openProjectModal('project2')">
-                        <div class="card-body">
-                            <h5 class="card-title">Приложение для изучения иностранных слов</h5>
-                            <p class="card-text small text-muted">
-                                Приложение, помогающее в изучении английского и немецкого языков, реализованное на языке C++.
-                            </p>
-                            <div class="mb-2">
-                                <span class="badge bg-success">C++</span>
-                            </div>
+                <div class="project-card" data-category="cpp">
+                    <div class="card h-100" onclick="openProjectModal('project2')">
+                        <h5 class="card-title">Приложение для изучения иностранных слов</h5>
+                        <p class="card-text small text-muted">
+                            Приложение, помогающее в изучении английского и немецкого языков, реализованное на языке C++.
+                        </p>
+                        <div class="mb-2">
+                            <span class="badge bg-success">C++</span>
                         </div>
                     </div>
                 </div>

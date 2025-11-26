@@ -365,3 +365,19 @@ a, button, input, textarea, select {
         padding-bottom: max(.5rem, calc((44px - 1em)/2));
     }
 }
+
+/* адаптивная Grid-сетка для проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    min-width: 0; 
+}
+
+.project-card .card-title,
+.project-card .card-text {
+    overflow-wrap: break-word;
+}
