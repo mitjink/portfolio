@@ -426,7 +426,7 @@ main {
 
 /* skip-link стили */
 .skip-link{
-    position: absolute;
+    position: fixed;
     left: 0.5rem;
     top: -100%;
     z-index: 10000;
