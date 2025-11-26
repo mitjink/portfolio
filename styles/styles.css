@@ -307,7 +307,25 @@ footer {
     border-color: var(--primary-color);
 }
 
-/*skip-link*/
+/* === Sticky-навигация с safe areas === */
+.navbar {
+    position: sticky;
+    top: 0;
+    padding-top: calc(.75rem + env(safe-area-inset-top, 0px));
+    padding-bottom: .75rem;
+    padding-left: calc(1rem + env(safe-area-inset-left, 0px));
+    padding-right: calc(1rem + env(safe-area-inset-right, 0px));
+    z-index: 1030;
+    background: #343a40 !important;
+}
+
+/* контент не заезжает под навигацию */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* skip-link стили */
 .skip-link{
     position: absolute;
     left: 1rem;
@@ -326,45 +344,24 @@ footer {
     top: 1rem; 
 }
 
-:focus-visible{
-    outline: 3px solid #2563eb;
-    outline-offset: 2px;
+/* видимый фокус только для клавиатуры */
+:focus-visible { 
+    outline: 3px solid #2563eb; 
+    outline-offset: 2px; 
 }
 
-a, button, input, textarea, select {
-    outline-offset: 2px;
+a, button, input, textarea, select { 
+    outline-offset: 2px; 
 }
 
+/* крупные цели для тач-устройств */
 @media (pointer: coarse){
-    a, button, .nav-link{
-        min-height: 44px;
+    a, button, .nav-link { 
+        min-height: 44px; 
     }
-
-    .btn{
-        padding-top: max(.5rem, calc((4px - 1em)/2));
+    
+    .btn {
+        padding-top: max(.5rem, calc((44px - 1em)/2));
         padding-bottom: max(.5rem, calc((44px - 1em)/2));
     }
-}
-
-.navbar-dark{
-    position: sticky;
-    top: 0;
-    padding-top: calc(.75rem + env(safe-area-insert-top, 0px));
-}
-
-.navbar {
-    position: sticky;
-    top: 0;
-    padding-top: calc(.75rem + env(safe-area-inset-top, 0px));
-    padding-bottom: .75rem;
-    padding-left: calc(1rem + env(safe-area-inset-left, 0px));
-    padding-right: calc(1rem + env(safe-area-inset-right, 0px));
-    z-index: 1030; 
-    background:
-    #343a40 !important; 
-}
-
-main {
-    position: relative;
-    z-index: 1;
 }
