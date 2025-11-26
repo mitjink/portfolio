@@ -351,3 +351,20 @@ a, button, input, textarea, select {
     top: 0;
     padding-top: calc(.75rem + env(safe-area-insert-top, 0px));
 }
+
+.navbar {
+    position: sticky;
+    top: 0;
+    padding-top: calc(.75rem + env(safe-area-inset-top, 0px));
+    padding-bottom: .75rem;
+    padding-left: calc(1rem + env(safe-area-inset-left, 0px));
+    padding-right: calc(1rem + env(safe-area-inset-right, 0px));
+    z-index: 1030; 
+    background:
+    #343a40 !important; 
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
