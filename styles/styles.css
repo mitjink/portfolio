@@ -733,16 +733,16 @@ main.container.my-4 {
 /* индикатор фокуса для навигации */
 .nav-link:focus {
     outline: none;
-    border-color: #00d5ff;
-    background: rgba(0, 102, 204, 0.1);
+    border-color: #00cc66;
+    background: rgba(0, 204, 102, 0.1);
     color: inherit;
 }
 
 /* индикатор фокуса для кнопок */
 .btn:focus {
     outline: none;
-    border-color: #00d5ff;
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3);
+    border-color: #00cc66;
+    box-shadow: 0 0 0 3px rgba(0, 204, 102, 0.4);
 }
 
 [data-theme="dark"] .nav-link:focus {
@@ -751,6 +751,6 @@ main.container.my-4 {
 }
 
 [data-theme="dark"] .btn:focus {
-    border-color: #00d5ff;
+    border-color: #00cc66;
     box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.3);
 }
