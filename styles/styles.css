@@ -259,6 +259,37 @@ dialog {
         margin-top: 1rem;
         text-align: center;
     }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .project-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .project-card .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .project-card .card-body {
+        padding: 1.25rem;
+    }
+}
+
+.project-card .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* анимации */
@@ -369,28 +400,76 @@ a, button, input, textarea, select {
 /* адаптивная Grid-сетка для проектов */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
 .project-card .card {
+    border: 1px solid #e9ecef;
     border-left: 4px solid var(--primary-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    background: white;
+    min-width: 0;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .project-card .card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
 }
 
 .project-card .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-left-color: #0056b3;
 }
 
+.project-card .card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+}
+
+/* заголовок с большими отступами */
 .project-card .card-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 700;
     color: var(--dark-color);
+    margin: 0;
+    line-height: 1.4;
+    padding-bottom: 0.5rem;
 }
 
+[data-theme="dark"] .project-card .card-title {
+    color: var(--text-color);
+}
+
+/* текст с хорошими отступами */
 .project-card .card-text {
     color: var(--secondary-color);
-    line-height: 1.5;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+    font-size: 0.95rem;
+}
+
+.project-card .badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+}
+
+/* фикс для переполнения текста */
+.project-card .card-title,
+.project-card .card-text {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
