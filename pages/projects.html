@@ -42,8 +42,9 @@
                             <p class="mb-0 opacity-75">Проекты</p>
                         </div>
                         <div class="col-auto">
-                            <button class="btn btn-outline-secondary btn-sm" id="themeToggle">
-                                <i class="bi bi-moon"></i>
+                            <button class="btn btn-outline-secondary btn-sm" id="themeToggle" tabindex="0" aria-label="Переключить цветовую тему">
+                                <i class="bi bi-moon" aria-hidden="true"></i>
+                                <span class="sr-only">Переключить тему</span>
                             </button>
                         </div>
                     </div>
@@ -51,7 +52,7 @@
             </header>
 
             <!-- навигация -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Основная навигация">
                 <div class="container">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Переключить навигационное меню" aria-expanded="false" aria-controls="navbarNav">
                         <span class="navbar-toggler-icon"></span>
@@ -60,22 +61,22 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="../index.html">
-                                    <i class="bi bi-house me-1"></i>Главная
+                                    <i class="bi bi-house me-1" aria-hidden="true"></i>Главная
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="projects.html">
-                                    <i class="bi bi-folder me-1"></i>Проекты
+                                <a class="nav-link active" href="projects.html" aria-current="page">
+                                    <i class="bi bi-folder me-1" aria-hidden="true"></i>Проекты
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="diary.html">
-                                    <i class="bi bi-journal me-1"></i>Дневник
+                                    <i class="bi bi-journal me-1" aria-hidden="true"></i>Дневник
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="contacts.html">
-                                    <i class="bi bi-telephone me-1"></i>Контакты
+                                    <i class="bi bi-telephone me-1" aria-hidden="true"></i>Контакты
                                 </a>
                             </li>
                         </ul>
@@ -87,10 +88,10 @@
                 <section class="mb-4">
                     <div class="card shadow-sm section-header-card">
                         <div class="card-header bg-light">
-                            <h3 class="card-title h5 mb-0">
-                                <i class="bi bi-folder text-primary me-2"></i>
+                            <h2 class="card-title h5 mb-0">
+                                <i class="bi bi-folder text-primary me-2" aria-hidden="true"></i>
                                 Мои проекты
-                            </h3>
+                            </h2>
                         </div>
                         <div class="card-body">
                             <p class="card-text text-muted mb-0">
@@ -101,21 +102,21 @@
                 </section>
 
                 <!-- фильтры -->
-                <div class="d-flex gap-2 mb-4 flex-wrap">
-                    <button class="btn btn-outline-primary active filter-btn" data-filter="all">Все</button>
-                    <button class="btn btn-outline-primary filter-btn" data-filter="html">HTML</button>
-                    <button class="btn btn-outline-primary filter-btn" data-filter="bootstrap">Bootstrap</button>
-                    <button class="btn btn-outline-primary filter-btn" data-filter="cpp">C++</button>
-                    <button class="btn btn-outline-primary filter-btn" data-filter="css">CSS</button>
+                <div class="d-flex gap-2 mb-4 flex-wrap" role="toolbar" aria-label="Фильтры проектов">
+                    <button class="btn btn-outline-primary active filter-btn" data-filter="all" aria-pressed="true">Все</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="html" aria-pressed="false">HTML</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="bootstrap" aria-pressed="false">Bootstrap</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="cpp" aria-pressed="false">C++</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="css" aria-pressed="false">CSS</button>
                 </div>
 
                 <!-- проекты с контейнерной оберткой -->
-                <section class="projects-area">
+                <section class="projects-area" aria-label="Сетка проектов">
                     <div class="projects-grid" id="projectsGrid">
-                        <div class="project-card" data-category="html,css,bootstrap">
+                        <div class="project-card" data-category="html,css,bootstrap" tabindex="0" role="button" aria-label="Открыть информацию о проекте 'Личный сайт'">
                             <div class="card h-100" onclick="openProjectModal('project1')">
                                 <div class="card-body">
-                                    <h5 class="card-title">Личный сайт</h5>
+                                    <h3 class="card-title h5">Личный сайт</h3>
                                     <p class="card-text">
                                         Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
                                     </p>
@@ -127,10 +128,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-card" data-category="cpp">
+                        <div class="project-card" data-category="cpp" tabindex="0" role="button" aria-label="Открыть информацию о проекте 'Приложение для изучения иностранных слов'">
                             <div class="card h-100" onclick="openProjectModal('project2')">
                                 <div class="card-body">
-                                    <h5 class="card-title">Приложение для изучения иностранных слов</h5>
+                                    <h3 class="card-title h5">Приложение для изучения иностранных слов</h3>
                                     <p class="card-text">
                                         Приложение, помогающее в изучении английского и немецкого языков, реализованное на языке C++.
                                     </p>
@@ -159,16 +160,13 @@
             </footer>
 
             <!-- модальное окно проекта -->
-            <dialog id="projectModal">
-                <div class="modal-content-custom">
+            <dialog id="projectModal" aria-labelledby="modalTitle" aria-modal="true">
+                <div class="modal-content-custom" role="document">
                     <div class="modal-header-custom">
                         <h2 id="modalTitle">Проект</h2>
                     </div>
                     <div class="modal-body-custom">
                         <div id="modalContent">
-                        </div>
-                        <div class="modal-actions">
-                            <button type="button" class="btn btn-secondary" onclick="closeProjectModal()">Закрыть</button>
                         </div>
                     </div>
                 </div>
@@ -178,6 +176,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/theme.js"></script>
     <script>
+        let previousActiveElement;
+
         // фильтр проектов
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', function() {
@@ -185,8 +185,10 @@
                 
                 document.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
                 });
                 this.classList.add('active');
+                this.setAttribute('aria-pressed', 'true');
                 
                 document.querySelectorAll('#projectsGrid > div').forEach(project => {
                     const categories = project.getAttribute('data-category').split(',');
@@ -227,6 +229,8 @@
             const modal = document.getElementById('projectModal');
             const title = document.getElementById('modalTitle');
             const content = document.getElementById('modalContent');
+
+            previousActiveElement = document.activeElement;
             
             title.textContent = project.title;
             content.innerHTML = `
@@ -235,49 +239,99 @@
                 </div>
                 
                 <div class="mb-3">
-                    <h6 class="fw-bold">Технологии:</h6>
+                    <h3 class="h6 fw-bold">Технологии:</h3>
                     <div class="d-flex gap-2 flex-wrap">
                         ${project.technologies.map(tech => `<span class="badge bg-primary">${tech}</span>`).join('')}
                     </div>
                 </div>
                 
                 <div class="mb-3">
-                    <h6 class="fw-bold">Основные функции:</h6>
+                    <h3 class="h6 fw-bold">Основные функции:</h3>
                     <ul>
                         ${project.features.map(feature => `<li>${feature}</li>`).join('')}
                     </ul>
                 </div>
                 
                 <div class="mb-3">
-                    <h6 class="fw-bold">Ссылки:</h6>
+                    <h3 class="h6 fw-bold">Ссылки:</h3>
                     <div class="d-flex gap-2 flex-wrap">
                         ${project.links.demo ? 
-                            `<a href="${project.links.demo}" class="btn btn-outline-primary btn-sm" target="_blank">
-                                <i class="bi bi-eye me-1"></i>Демо
+                            `<a href="${project.links.demo}" class="btn btn-outline-primary btn-sm" target="_blank" aria-label="Посмотреть демо проекта ${project.title}">
+                                <i class="bi bi-eye me-1" aria-hidden="true"></i>Демо
                             </a>` : ''
                         }
                         ${project.links.github ? 
-                            `<a href="${project.links.github}" class="btn btn-outline-dark btn-sm" target="_blank">
-                                <i class="bi bi-github me-1"></i>GitHub
+                            `<a href="${project.links.github}" class="btn btn-outline-dark btn-sm" target="_blank" aria-label="Посмотреть код проекта на GitHub">
+                                <i class="bi bi-github me-1" aria-hidden="true"></i>GitHub
                             </a>` : ''
                         }
                     </div>
                 </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeProjectModal()" aria-label="Закрыть модальное окно проекта">Закрыть</button>
+                </div>
             `;
             
             modal.showModal();
+
+            document.addEventListener('keydown', handleModalEscape);
+
+            setTimeout(() => {
+                const closeBtn = modal.querySelector('.btn-secondary');
+                if (closeBtn) closeBtn.focus();
+            }, 100);
         }
 
         function closeProjectModal() {
             const modal = document.getElementById('projectModal');
             modal.close();
+            
+            if (previousActiveElement) {
+                previousActiveElement.focus();
+            }
+
+            document.removeEventListener('keydown', handleModalEscape);
         }
 
-        // закрытие модального окна при клике вне его
+        function handleModalEscape(event) {
+            if (event.key === 'Escape') {
+                closeProjectModal();
+            }
+        }
+
         document.getElementById('projectModal').addEventListener('click', function(event) {
             if (event.target === this) {
                 closeProjectModal();
             }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        const projectId = this.getAttribute('data-category').split(',')[0] === 'html,css,bootstrap' ? 'project1' : 'project2';
+                        openProjectModal(projectId);
+                    }
+                });
+            });
+
+            document.getElementById('projectModal').addEventListener('keydown', function(event) {
+                if (event.key === 'Tab') {
+                    const focusableElements = this.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                    const firstElement = focusableElements[0];
+                    const lastElement = focusableElements[focusableElements.length - 1];
+
+                    if (event.shiftKey && document.activeElement === firstElement) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    } else if (!event.shiftKey && document.activeElement === lastElement) {
+                        event.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            });
         });
     </script>
 </body>

@@ -734,7 +734,8 @@ main.container.my-4 {
 .nav-link:focus {
     outline: none;
     border-color: #0066cc;
-    background: #e6f3ff;
+    background: rgba(0, 102, 204, 0.1);
+    color: inherit;
 }
 
 /* индикатор фокуса для кнопок */
@@ -742,4 +743,14 @@ main.container.my-4 {
     outline: none;
     border-color: #0066cc;
     box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3);
+}
+
+[data-theme="dark"] .nav-link:focus {
+    background: rgba(0, 102, 204, 0.2);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .btn:focus {
+    border-color: #4dabf7;
+    box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.3);
 }
