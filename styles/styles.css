@@ -427,11 +427,13 @@ main {
     top: -100%;
     z-index: 10000;
     padding: .5rem .75rem;
-    background: #111;
-    color: #fff;
+    background: #fff;
+    color: #000;
     border-radius: .5rem;
     text-decoration: none;
     font-weight: 600;
+    border: 2px solid #2563eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .skip-link:focus,
