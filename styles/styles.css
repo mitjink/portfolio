@@ -69,6 +69,18 @@ header {
     margin-top: 1rem;
 }
 
+.page {
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
 /* карточки проектов */
 .product-card {
     transition: var(--transition);
