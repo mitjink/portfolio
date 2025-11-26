@@ -246,7 +246,6 @@ dialog {
 
 .project-card .card {
     border: 1px solid #e9ecef;
-    border-left: 4px solid var(--primary-color);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
@@ -264,7 +263,6 @@ dialog {
 .project-card .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    border-left-color: #0056b3;
 }
 
 .project-card .card-body {
