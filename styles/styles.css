@@ -746,7 +746,7 @@ main.container.my-4 {
 .nav-link:focus {
     outline: none;
     border: 3px solid #0055AA;
-    background: rgba(0, 85, 170, 0.12);
+    background: rgba(255, 255, 255, 0.9);
     color: inherit;
     box-shadow: 0 0 0 2px #FFFFFF;
 }
@@ -756,7 +756,7 @@ main.container.my-4 {
     outline: none;
     border: 3px solid #0055AA;
     box-shadow: 0 0 0 2px #FFFFFF;
-    background: rgba(0, 85, 170, 0.08);
+    background: rgba(255, 255, 255, 0.85);
 }
 
 [data-theme="dark"] .nav-link:focus {
