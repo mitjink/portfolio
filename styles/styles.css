@@ -427,26 +427,6 @@ main {
 
 /* skip-link стили */
 .skip-link{
-    position: fixed;
-    left: 0.5rem;
-    top: -100%;
-    z-index: 10000;
-    padding: .15rem .3rem;
-    background: #fff;
-    color: #000;
-    border-radius: .15rem;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.5rem;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-}
-
-.skip-link:focus,
-.skip-link:focus-visible { 
-    top: 0.3rem; 
-}
-
-.skip-link{
     position: absolute;
     inset-inline-start: 1rem;
     inset-block-start: -100%;
@@ -456,7 +436,7 @@ main {
     color: #000;
     border-radius: .5rem;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: .7rem;
     font-weight: 600;
 }
 .skip-link:focus,
