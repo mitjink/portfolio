@@ -439,6 +439,8 @@ main {
     font-size: 1rem; 
     font-weight: 600;
 }
+.skip-link:focus,
+.skip-link:focus-visible { inset-block-start: .5rem; }
 
 /* видимый фокус только для клавиатуры */
 :focus-visible { 
