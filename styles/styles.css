@@ -442,6 +442,20 @@ main {
     top: 0.3rem; 
 }
 
+.skip-link{
+    position: absolute;
+    inset-inline-start: 1rem;
+    inset-block-start: -100%;
+    z-index: 10000;
+    padding: .5rem .75rem;
+    background: #fff;
+    color: #000;
+    border-radius: .5rem;
+    text-decoration: none;
+}
+.skip-link:focus,
+.skip-link:focus-visible { inset-block-start: 1rem; }
+
 /* видимый фокус только для клавиатуры */
 :focus-visible { 
     outline: 3px solid #2563eb; 
@@ -456,6 +470,7 @@ a, button, input, textarea, select {
 @media (pointer: coarse){
     a, button, .nav-link { 
         min-height: 44px; 
+        padding: .75rem 1rem;
     }
     
     .btn {
