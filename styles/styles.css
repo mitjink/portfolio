@@ -60,7 +60,7 @@
 /* общие стили */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     transition: var(--transition);
     padding-top: .5rem;
 }
@@ -89,8 +89,8 @@ header {
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-color: var(--primary-color);
 }
 
@@ -117,15 +117,15 @@ header {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .timeline-marker {
     position: absolute;
     left: -30px;
     top: 0;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -134,7 +134,7 @@ header {
 }
 
 .timeline-content {
-    padding: 12px;
+    padding: 10px;
     background: var(--light-color);
     border-radius: var(--border-radius);
     border: 1px solid #e9ecef;
@@ -155,8 +155,8 @@ header {
 
 /* контактные иконки */
 .contact-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,7 +191,7 @@ dialog {
 }
 
 .modal-header-custom {
-    padding: 20px;
+    padding: 15px;
     background: var(--light-color);
     border-bottom: 1px solid #e9ecef;
 }
@@ -265,8 +265,8 @@ dialog {
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+    gap: 1rem;
+    margin: 1rem 0;
 }
 
 /* контейнерные запросы */
@@ -295,8 +295,8 @@ dialog {
     .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
+        gap: 1rem;
+        margin: 1rem 0;
     }
 }
 
@@ -318,26 +318,26 @@ dialog {
 }
 
 .project-card .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .project-card .card-body {
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 /* заголовок с большими отступами */
 .project-card .card-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--dark-color);
     margin: 0;
-    line-height: 1.4;
-    padding-bottom: 0.25rem;
+    line-height: 1.3;
+    padding-bottom: 0.1rem;
 }
 
 [data-theme="dark"] .project-card .card-title {
@@ -347,17 +347,17 @@ dialog {
 /* текст с хорошими отступами */
 .project-card .card-text {
     color: var(--secondary-color);
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
     flex-grow: 1;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .project-card .badge {
     font-size: 0.75rem;
-    padding: 0.5rem 0.75rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
     border-radius: 6px;
 }
 
@@ -370,28 +370,28 @@ dialog {
 
 /* стили для проектов */
 #projectsGrid .project-card .card .card-body {
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 #projectsGrid .project-card .card .card-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--dark-color);
     margin: 0;
-    line-height: 1.4;
-    padding-bottom: 0.25rem;
+    line-height: 1.3;
+    padding-bottom: 0.1rem;
 }
 
 #projectsGrid .project-card .card .card-text {
     color: var(--secondary-color);
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
     flex-grow: 1;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 [data-theme="dark"] #projectsGrid .project-card .card .card-title {
@@ -438,7 +438,7 @@ footer {
 
 /* профиль действия */
 .profile-actions {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 
 /* фильтры проектов */
@@ -521,11 +521,11 @@ a, button, input, textarea, select {
 
 /* резервирование места для предотвращения CLS */
 .card {
-    min-height: 180px;
+    min-height: auto;
 }
 
 .timeline-item {
-    min-height: 70px;
+    min-height: auto;
 }
 
 /* крупные цели для тач-устройств */
@@ -578,7 +578,7 @@ a, button, input, textarea, select {
     }
     
     .card-body {
-        padding: 1rem;
+        padding: 0.75rem;
     }
     
     .modal-actions {
@@ -590,30 +590,30 @@ a, button, input, textarea, select {
     }
     
     .profile-actions {
-        margin-top: 1rem;
+        margin-top: 0.75rem;
         text-align: center;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 1rem 0;
+        gap: 0.75rem;
+        margin: 0.75rem 0;
     }
     
     .project-card .card-body {
-        padding: 1.25rem;
+        padding: 0.75rem;
     }
     
     .project-card .card-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     #projectsGrid .project-card .card .card-body {
-        padding: 1.25rem;
+        padding: 0.75rem;
     }
     
     #projectsGrid .project-card .card .card-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .hero-image {
@@ -625,15 +625,15 @@ a, button, input, textarea, select {
 @media (max-width: 480px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 0.75rem;
+        gap: 0.5rem;
     }
     
     .project-card .card-body {
-        padding: 1rem;
+        padding: 0.5rem;
     }
     
     #projectsGrid .project-card .card .card-body {
-        padding: 1rem;
+        padding: 0.5rem;
     }
     
     .navbar-nav .nav-link {
@@ -689,33 +689,33 @@ a, button, input, textarea, select {
 }
 
 header.bg-light.text-dark.py-4 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
 }
 
 main.container.my-4 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
 }
 
 .section-header-card .card-body {
-    padding: 0.75rem 1.25rem !important;
+    padding: 0.4rem 0.8rem !important;
 }
 
 .card-body {
-    padding: 1.5rem !important;
+    padding: 0.75rem !important;
 }
 
 .project-card .card-body {
-    padding: 1.5rem !important;
+    padding: 0.75rem !important;
 }
 
 .card {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.75rem !important;
 }
 
 .section {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1rem !important;
 }
 
 .sr-only {
