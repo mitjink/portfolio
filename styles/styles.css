@@ -745,37 +745,34 @@ main.container.my-4 {
 /* индикатор фокуса для навигации */
 .nav-link:focus {
     outline: none;
-    border: 2px solid #00FF00;
-    background: rgba(0, 255, 0, 0.2);
-    color: #000;
-    box-shadow: 0 0 8px #00FF00;
+    border: 3px solid #0066CC;
+    background: rgba(0, 102, 204, 0.15);
+    color: inherit; /* Сохраняем исходный цвет текста */
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 5px #0066CC;
 }
 
 /* индикатор фокуса для кнопок */
 .btn:focus {
     outline: none;
-    border: 3px solid #00FF00;
-    box-shadow: 0 0 12px #00FF00, 0 0 6px #00FF00 inset;
-    background: rgba(0, 255, 0, 0.15);
+    border: 3px solid #0066CC;
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 5px #0066CC;
+    background: rgba(0, 102, 204, 0.1);
 }
 
 [data-theme="dark"] .nav-link:focus {
-    border: 2px solid #00FFFF;
-    background: rgba(0, 255, 255, 0.25);
-    color: #FFFFFF;
-    box-shadow: 0 0 10px #00FFFF;
-    text-shadow: 0 0 5px #00FFFF;
+    border: 3px solid #00CC66;
+    background: rgba(0, 204, 102, 0.2);
+    color: inherit; 
+    box-shadow: 0 0 0 2px #000000, 0 0 0 5px #00CC66;
 }
 
 [data-theme="dark"] .btn:focus {
-    border: 3px solid #00FFFF;
-    box-shadow: 0 0 15px #00FFFF, 0 0 8px #00FFFF inset;
-    background: rgba(0, 255, 255, 0.2);
+    border: 3px solid #00CC66;
+    box-shadow: 0 0 0 2px #000000, 0 0 0 5px #00CC66;
+    background: rgba(0, 204, 102, 0.15);
 }
 
-/* дополнительные стили для максимальной контрастности */
 .nav-link:focus,
 .btn:focus {
     transition: all 0.2s ease;
-    transform: scale(1.05);
 }
