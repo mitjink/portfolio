@@ -65,6 +65,10 @@ body {
     padding-top: .5rem;
 }
 
+header {
+    margin-top: 1rem;
+}
+
 /* карточки проектов */
 .product-card {
     transition: var(--transition);
@@ -452,6 +456,8 @@ main {
     color: #000;
     border-radius: .5rem;
     text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
 }
 .skip-link:focus,
 .skip-link:focus-visible { inset-block-start: 1rem; }
