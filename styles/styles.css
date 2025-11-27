@@ -130,6 +130,8 @@ picture {
     height: 100%;
     object-fit: cover;
     border-radius: var(--border-radius);
+    object-fit: contain;
+    background: #f8f9fa;
 }
 
 @media (max-width: 768px) {
