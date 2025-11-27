@@ -115,11 +115,15 @@ picture {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .gallery-item {
     aspect-ratio: 16/9;
     min-height: 150px;
+    background-image: url('../images/project1.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .gallery-image {
@@ -925,7 +929,7 @@ main.container.my-4 {
 
 /* lazy loading стили */
 img[loading="lazy"] {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 
