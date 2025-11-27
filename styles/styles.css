@@ -116,13 +116,13 @@ picture {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin-bottom: 1.5rem;
+    max-width: 100%;
 }
 
 .gallery-item {
     aspect-ratio: 16/9;
     min-height: 150px;
-    background-size: cover;
-    background-position: center;
+    max-height: 200px;
 }
 
 .gallery-image {
