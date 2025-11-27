@@ -57,6 +57,90 @@
     color: var(--text-color);
 }
 
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+picture {
+    display: block;
+}
+
+.retina-image {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.object-fit-demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.object-fit-item {
+    text-align: center;
+}
+
+.object-fit-item img {
+    width: 100%;
+    height: 200px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 0.5rem;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+    background: #f8f9fa;
+}
+
+[data-theme="dark"] .object-fit-contain {
+    background: var(--border-color);
+}
+
+.object-fit-fill {
+    object-fit: fill;
+}
+
+/* адаптивная галерея */
+.adaptive-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+}
+
 /* общие стили */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -499,7 +583,6 @@ a, button, input, textarea, select {
     outline-offset: 2px; 
 }
 
-/* Улучшения для CLS (Cumulative Layout Shift) */
 .hero-image {
     width: 150px;
     height: 150px;
@@ -519,7 +602,6 @@ a, button, input, textarea, select {
     height: 100%;
 }
 
-/* резервирование места для предотвращения CLS */
 .card {
     min-height: auto;
 }
@@ -542,6 +624,7 @@ a, button, input, textarea, select {
 }
 
 /* адаптивность для мобильных */
+
 @media (max-width: 991.98px) {
     .navbar-collapse {
         margin-top: 1rem;
@@ -568,6 +651,17 @@ a, button, input, textarea, select {
     
     .navbar-toggler:focus {
         box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+    }
+    
+    /* адаптивность для object-fit демо */
+    .object-fit-demo {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* адаптивность для галереи */
+    .adaptive-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -620,6 +714,16 @@ a, button, input, textarea, select {
         width: 120px;
         height: 120px;
     }
+    
+    /* адаптивность для галереи */
+    .adaptive-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .gallery-image {
+        height: 150px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -649,8 +753,51 @@ a, button, input, textarea, select {
         width: 100px;
         height: 100px;
     }
+    
+    /* адаптивность для галереи */
+    .adaptive-gallery {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .gallery-image {
+        height: 120px;
+    }
+    
+    .object-fit-item img {
+        height: 150px;
+    }
 }
 
+/* адаптивность для больших экранов */
+@media (min-width: 1200px) {
+    .adaptive-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .gallery-image {
+        height: 220px;
+    }
+}
+
+@media (min-height: 800px) and (min-width: 1200px) {
+    .gallery-image {
+        height: 250px;
+    }
+}
+
+/* адаптивность для печати */
+@media print {
+    .adaptive-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-item {
+        break-inside: avoid;
+    }
+}
+
+/* уменьшение движения */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -667,6 +814,14 @@ a, button, input, textarea, select {
     }
     
     .project-card .card:hover {
+        transform: none;
+    }
+    
+    .gallery-item:hover {
+        transform: none;
+    }
+    
+    .gallery-item:hover .gallery-image {
         transform: none;
     }
 }
@@ -700,6 +855,7 @@ a, button, input, textarea, select {
     }
 }
 
+/* утилиты */
 header.bg-light.text-dark.py-4 {
     padding-top: 0.75rem !important;
     padding-bottom: 0.75rem !important;
@@ -775,4 +931,14 @@ main.container.my-4 {
 .nav-link:focus,
 .btn:focus {
     transition: all 0.2s ease;
+}
+
+/* lazy loading стили */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
 }
