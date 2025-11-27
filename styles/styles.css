@@ -118,7 +118,8 @@ picture {
 }
 
 .gallery-item {
-    height: 200px;
+    aspect-ratio: 16/9;
+    min-height: 150px;
 }
 
 .gallery-image {
