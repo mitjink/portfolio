@@ -299,7 +299,15 @@
                 </div>
             `;
             
-            modal.showModal();
+            modal.setAttribute('aria-hidden', 'false');
+            modal.style.display = 'block';
+            modal.focus();
+
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+            overlay.setAttribute('aria-hidden', 'true');
+            overlay.onclick = closeProjectModal;
+            document.body.appendChild(overlay);
 
             document.addEventListener('keydown', handleModalEscape);
 
@@ -311,7 +319,11 @@
 
         function closeProjectModal() {
             const modal = document.getElementById('projectModal');
-            modal.close();
+            modal.setAttribute('aria-hidden', 'true');
+            modal.style.display = 'none';
+            
+            const overlay = document.querySelector('.modal-overlay');
+            if (overlay) overlay.remove();
             
             if (previousActiveElement) {
                 previousActiveElement.focus();
