@@ -118,7 +118,7 @@ picture {
 }
 
 .gallery-item {
-    aspect-ratio: 16/9;
+    height: 200px;
 }
 
 .gallery-image {
