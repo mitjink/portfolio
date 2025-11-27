@@ -902,30 +902,76 @@ main.container.my-4 {
     box-shadow: 0 0 0 2px #FFFFFF;
 }
 
-/* индикатор фокуса для кнопок */
-.btn:focus {
-    outline: none;
-    border: 3px solid #0055AA;
-    box-shadow: 0 0 0 2px #FFFFFF;
-    background: rgba(255, 255, 255, 0.85);
-}
-
 [data-theme="dark"] .nav-link:focus {
     border: 3px solid #00DD77;
     background: rgba(0, 221, 119, 0.2);
-    color: inherit;
+    color: #000000;
     box-shadow: 0 0 0 2px #000000;
 }
 
 [data-theme="dark"] .btn:focus {
-    border: 3px solid #00DD77;
-    box-shadow: 0 0 0 2px #000000;
-    background: rgba(0, 221, 119, 0.15);
+    border-color: #00DD77;
+    box-shadow: 0 0 0 3px rgba(0, 221, 119, 0.3);
+    background-color: #00DD77;
+    color: #000000 !important;
 }
 
-.nav-link:focus,
+.filter-btn:focus {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-color: var(--primary-color) !important;
+}
+
+#themeToggle:focus {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-primary:focus {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-outline-primary:focus {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:focus {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-outline-secondary:focus {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.nav-link:focus{
+    outline: none;
+    border: 3px solid #0055AA;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000 !important;
+    box-shadow: 0 0 0 2px #FFFFFF;
+}
 .btn:focus {
-    transition: all 0.2s ease;
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+.project-card .card:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.progress:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 /* lazy loading стили */
