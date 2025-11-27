@@ -143,6 +143,38 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- адаптивная галерея проектов -->
+                <section class="mb-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-grid-3x3-gap text-primary me-2"></i>
+                                Галерея проектов
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="adaptive-gallery">
+                                <div class="gallery-item">
+                                    <picture>
+                                        <source media="(min-width: 1200px)" srcset="../images/project1-large.jpg">
+                                        <source media="(min-width: 768px)" srcset="../images/project1-medium.jpg">
+                                        <img src="../images/project1-small.jpg" alt="Личный сайт - главная страница" 
+                                             class="gallery-image" loading="lazy">
+                                    </picture>
+                                </div>
+                                <div class="gallery-item">
+                                    <picture>
+                                        <source media="(min-width: 1200px)" srcset="../images/project2-large.jpg">
+                                        <source media="(min-width: 768px)" srcset="../images/project2-medium.jpg">
+                                        <img src="../images/project2-small.jpg" alt="Приложение для изучения языков - интерфейс" 
+                                             class="gallery-image" loading="lazy">
+                                    </picture>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <!-- футер -->

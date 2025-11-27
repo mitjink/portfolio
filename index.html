@@ -72,14 +72,13 @@
                                 <div class="col-md-3 text-center mb-3 mb-md-0">
                                     <figure class="hero-image">
                                         <picture>
-                                        <source type="image/avif" srcset="images/photo.avif">
-                                        <source type="image/webp" srcset="images/photo.webp">
-                                        <img class="hero-photo" src="images/photo.png" width="150" height="150" alt="Фото профиля"
-                                            style="object-fit: cover;"
+                                            <source type="image/webp" srcset="images/photo.webp, images/photo@2x.webp 2x">
+                                            <source type="image/jpeg" srcset="images/photo.jpg, images/photo@2x.jpg 2x">
+                                            <img class="hero-photo responsive-image" src="images/photo.jpg" 
+                                            alt="Фото профиля"
                                             loading="eager"
-                                            fetchpriority="high"
-                                            sizes="150px">
-                                    </picture>
+                                            fetchpriority="high">
+                                        </picture>
                                     </figure>
                                 </div>
                                 <div class="col-md-9">
@@ -111,35 +110,37 @@
                 <button id="toggleBtn" class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#hiddenText">Развернуть</button>
                 <div class="collapse mt-2" id="hiddenText">
                     <div class="card card-body">
-                        <main class="container my-4">
-                <!-- профиль -->
-                <section class="mb-5">
-                    <div class="card shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="row align-items-center">
-                                <div class="col-md-3 text-center mb-3 mb-md-0">
-                                    <img src="images/cat.png" alt="Фото профиля" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
-                                </div>
-                                <div class="col-md-9">
-                                    <h2 class="card-title h4 text-dark">Радж</h2>
-                                    <p class="card-text text-muted mb-2">
-                                        <i class="bi bi-bookmark-check-fill text-primary"></i>
-                                        Помощник
-                                    </p>
-                                    <p class="card-text">
-                                        Кот
-                                    </p>
-                                    <div class="d-flex gap-2 flex-wrap mb-3">
-                                        <span class="badge bg-primary">Мурлыканье</span>
+                        <section class="mb-5">
+                            <div class="card shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3 text-center mb-3 mb-md-0">
+                                            <figure class="hero-image">
+                                                <picture>
+                                                    <source type="image/png" srcset="images/cat.png, images/cat@2x.png 2x">
+                                                    <img src="images/cat.png" alt="Кот Радж" class="hero-photo responsive-image">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h2 class="card-title h4 text-dark">Радж</h2>
+                                            <p class="card-text text-muted mb-2">
+                                                <i class="bi bi-bookmark-check-fill text-primary"></i>
+                                                Заместитель
+                                            </p>
+                                            <p class="card-text">
+                                                Кот
+                                            </p>
+                                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                                <span class="badge bg-primary">Мурлыканье</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </section>
                     </div>
                 </div>
-                
-                </section>
 
                 <!-- обо мне -->
                 <section class="mb-5">
