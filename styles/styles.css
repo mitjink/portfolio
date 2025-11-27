@@ -1014,3 +1014,25 @@ img[loading="lazy"].loaded {
     background: rgba(0, 0, 0, 0.5);
     z-index: 1040;
 }
+
+.badge.bg-info {
+    background-color: #0dcaf0 !important;
+    color: #000000 !important; 
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #000000 !important;
+}
+
+.text-primary {
+    color: #0056b3 !important; 
+}
+
+.card.shadow-sm {
+    color: #212529 !important; 
+}
+
+.card-text.text-muted {
+    color: #6c757d !important;
+}
